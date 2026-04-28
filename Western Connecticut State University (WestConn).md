@@ -1,3 +1,5 @@
+# Western Connecticut State University
+
 ### Circa 2005
 
 ![Image of Connecticut, altered to show the fictional town of Norwood, CT](map_CT.png)
