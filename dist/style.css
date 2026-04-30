@@ -135,34 +135,6 @@ td {
   padding: 5px;
 }
 
-/* === Optional “weird” flavor elements === */
-
-/* Blinking text (deprecated but fun) */
-.blink {
-  animation: blinker 1s linear infinite;
-  color: red;
-}
-
-@keyframes blinker {
-  50% { opacity: 0; }
-}
-
-/* Marquee-style banner fallback */
-.marquee {
-  width: 100%;
-  overflow: hidden;
-  white-space: nowrap;
-  box-sizing: border-box;
-  animation: marquee 10s linear infinite;
-  color: #ff0000;
-  font-weight: bold;
-}
-
-@keyframes marquee {
-  0%   { text-indent: 100%; }
-  100% { text-indent: -100%; }
-}
-
 /* Visitor counter style */
 .counter {
   font-family: "Courier New", monospace;
@@ -172,11 +144,47 @@ td {
   display: inline-block;
 }
 
-/* === Subtle unease (optional horror flavor) === */
-body:hover {
-  background-color: #b8b8b8;
+/* === Subtle unease === */
+
+.flash-0 {
+  background-color: #000000 !important;
+  color: #ff0000 !important;
 }
 
-img:hover {
-  filter: contrast(110%) brightness(95%);
+/* make sure common elements inherit the flash colors */
+.flash-0 * {
+  color: #ff0000 !important;
+  background-color: transparent !important;
+}
+
+.flash-1 {
+  background-color: #000000 !important;
+  color: #00ff00 !important;
+}
+
+/* make sure common elements inherit the flash colors */
+.flash-1 * {
+  color: #00ff00 !important;
+  background-color: transparent !important;
+}
+
+.flash-2 {
+  background-color: #000000 !important;
+  color: #0000ff !important;
+}
+
+/* make sure common elements inherit the flash colors */
+.flash-2 * {
+  color: #0000ff !important;
+  background-color: transparent !important;
+}
+
+.flash-0 img,
+.flash-1 img,
+.flash-2 img {
+  filter: invert(1) contrast(150%);
+}
+
+body, .container, .container * {
+  transition: background-color 80ms ease-in-out, color 80ms ease-in-out;
 }
