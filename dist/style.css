@@ -91,7 +91,7 @@ a {
 }
 
 a:visited {
-  color: #551A8B;
+  color: #b769ff;
 }
 
 /* === Blockquotes (for flavor text) === */
@@ -186,5 +186,5 @@ td {
 }
 
 body, .container, .container * {
-  transition: background-color 80ms ease-in-out, color 80ms ease-in-out;
+  transition: background-color 130ms ease-in-out, color 80ms ease-in-out;
 }

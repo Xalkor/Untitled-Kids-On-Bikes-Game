@@ -20,7 +20,7 @@
             }, Math.random() * 80 + 60);
         }
 
-        const nFlashes = Math.floor(Math.random()*3+3);
+        const nFlashes = Math.floor(Math.random()*3+4);
         let flashes = new Array(children.length-nFlashes).fill(false).concat(new Array(nFlashes).fill(true)).sort((a,b)=>Math.random()<0.5).sort((a,b)=>Math.random()<0.8)
 
         function revealNext() {
@@ -30,7 +30,7 @@
                 if(flashes[i]) setTimeout(flash, Math.random() * 80);
 
                 i++;
-                setTimeout(revealNext, Math.random() * 800 + 200);
+                setTimeout(revealNext, Math.random() * 600 + 100);
             }
         }
 
@@ -46,9 +46,9 @@
 
         <nav>
             <a href="#">Home</a>
-            <a href="#">Academics</a>
-            <a href="#">Athletics</a>
-            <a href="#">Campus Life</a>
+            <a href="404.html">Academics</a>
+            <a href="404.html">Athletics</a>
+            <a href="404.html">Campus Life</a>
         </nav>
 
         <figure>
