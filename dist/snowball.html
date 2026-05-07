@@ -1,0 +1,84 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const container = document.querySelector(".container");
+        const children = Array.from(container.children);
+
+        container.innerHTML = "";
+
+        let i = 0;
+
+        function flash() {
+            const cl = `flash-${Math.floor(Math.random()*3)}`;
+            document.body.classList.add(cl);
+
+            setTimeout(() => {
+                document.body.classList.remove(cl);
+            }, Math.random() * 40 + 20);
+        }
+
+        const nFlashes = Math.floor(Math.random()*3+1);
+        let flashes = new Array(children.length-nFlashes).fill(false).concat(new Array(nFlashes).fill(true)).sort((a,b)=>Math.random()<0.5).sort((a,b)=>Math.random()<0.8)
+
+        function revealNext() {
+            if (i < children.length) {
+                container.appendChild(children[i]);
+
+                if(flashes[i]) setTimeout(flash, Math.random() * 80);
+
+                i++;
+                setTimeout(revealNext, Math.random() * 400 + 50);
+            }
+        }
+
+        revealNext();
+    });
+    </script>
+    <body>
+        <div class="container">
+        <header>
+            <h1>Snowball the Husky</h1>
+        </header>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="404.html">Previous Mascots</a>
+        </nav>
+
+        <figure>
+            <img src="snowball.png" alt="Image of Jonathan XIII from UConn with former president of UConn, Michael Hogan (who are the stand-ins for Snowball IX and John Whyteman)"/>
+            <br>
+            <figcaption style="text-align: center;">Snowball IX standing with president John Whyteman. </figcaption>
+        </figure>
+
+        <p>Snowball is a pure white Siberian husky gifted to WestConn by the university of Alaska in 2003. He suffers from anxiety around large crowds, but still attends every women's basketball game. </p>
+
+        <p>His strange behavior at games is a constant source of rumors among the student body. He avoids cameras like the plague, so there is always little footage of him from games, but some students swear they've seen him move... <em>strangely</em></p>
+
+        <h2>Aspects</h2>
+        <h3>Professor Zhuk - Vivian</h3>
+        <ul>
+            <li><span style="background-color:mediumspringgreen">Able to Teleport Short Distances</span></li>
+            <li><span style="background-color:tomato">Quick (d20 Flight) </span></li>
+        </ul>
+        <h3>Sable - Valentine</h3>
+        <ul>
+            <li><span style="background-color:mediumspringgreen">Able to Communicate Telepathically with Animals</span></li>
+            <li><span style="background-color:cornflowerblue">Scared of Loud Noises</span></li>
+        </ul>
+        <h3>Casandra "Poterhouse" - Josh</h3>
+        <ul>
+            <li><span style="background-color:mediumspringgreen">Able to Subtly Distort Memories</span></li>
+            <li><span style="background-color:tomato">Usually Hungry</span></li>
+        </ul>
+
+        <footer>
+            Last updated: April 22, 2005<br>
+            Visitors: <span class="counter">0000652</span>
+        </footer>
+        </div>
+    </body>
+</html>
